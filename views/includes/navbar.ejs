@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i> SajiloStay</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- Left Links -->
+      <div class="navbar-nav me-auto">
+        <a class="nav-link" href="/home">Home</a>
+        <a class="nav-link" href="/listings">All Listings</a>
+        <a class="nav-link" href="/listings/new">Add Listing</a>
+        <a class="nav-link" href="/booking">Show Bookings</a>
+      </div>
+
+      <!-- Right Side: Welcome Username -->
+      <div class="d-flex align-items-center">
+        <% if (username) { %>
+          <span class="me-3">Welcome, <strong><%= username %></strong></span>
+          <a class="btn btn-outline-danger btn-sm" href="/logout">Logout</a>
+        <% } else { %>
+          <a class="btn btn-outline-primary btn-sm me-2" href="/login">Login</a>
+          <a class="btn btn-primary btn-sm" href="/signup">Sign Up</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
