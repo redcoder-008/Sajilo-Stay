@@ -32,7 +32,7 @@ router.post("/login", async (req, res) => {
     if (user) {
       req.session.userId = user._id;
       req.session.username = user.username;
-      res.redirect("/listings");
+      res.redirect("/home");
     } else {
       res.send("Invalid credentials");
     }
