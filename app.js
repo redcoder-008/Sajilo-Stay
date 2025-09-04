@@ -1,3 +1,6 @@
+// app.js
+require("dotenv").config(); // <-- add this at the very top of app.js
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -6,17 +9,11 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const passport = require("passport");
 
+// Models
 const Listing = require("./models/listing.js");
 const Booking = require("./models/booking.js");
-
-// Middleware & Config
-app.engine("ejs", ejsMate);
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
-app.use(express.static(path.join(__dirname, "/public")));
 
 // MongoDB Connection
 const MONGO_URL = "mongodb://127.0.0.1:27017/wonderlust";
@@ -27,10 +24,18 @@ main()
   .then(() => console.log("✅ Database Connected"))
   .catch((err) => console.log("❌ DB Error", err));
 
-// Session Middleware (must be before routes)
+// Middleware & Config
+app.engine("ejs", ejsMate);
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, "/public")));
+
+// Session Middleware (must be before passport + routes)
 app.use(
   session({
-    secret: "karan@2082", // change to env var for production
+    secret: "karan@2082", // ⚠️ change to env var in production
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: MONGO_URL }),
@@ -38,25 +43,32 @@ app.use(
   })
 );
 
+// Passport Config (Google Sign-In)
+require("./config/passport");
+app.use(passport.initialize());
+app.use(passport.session());
+
 // ✅ Make username available in all templates
 app.use((req, res, next) => {
-  res.locals.username = req.session?.username || null;
+  res.locals.username =
+    req.session?.username || (req.user ? req.user.username : null);
   next();
 });
 
-// Home Route
+// ---------------- ROUTES ----------------
+
+// Home
 app.get("/", (req, res) => {
   res.redirect("/home");
 });
 app.get("/home", (req, res) => {
   res.render("Listings/home.ejs");
-})
+});
 
 // Listings CRUD
 app.get("/listings", async (req, res) => {
   const allListings = await Listing.find({});
-  const username = req.session.username || null;
-  res.render("Listings/index.ejs", { allListings, username });
+  res.render("Listings/index.ejs", { allListings });
 });
 
 app.get("/listings/new", (req, res) => {
@@ -134,7 +146,7 @@ app.post("/booking", async (req, res) => {
   }
 });
 
-// Auth Routes
+// Auth Routes (Signup/Login + Google OAuth)
 const authRoutes = require("./routes/auth.js");
 app.use("/", authRoutes);
 

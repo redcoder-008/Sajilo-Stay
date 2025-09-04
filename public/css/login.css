@@ -213,3 +213,8 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+.loginfooter{
+
+    padding-top: 5rem;
+}

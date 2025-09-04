@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/login.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <body>
   <div class="container" id="container">
@@ -9,43 +10,66 @@
         <div class="social-icons">
           <!-- <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
           <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a> -->
+
+          <div class="social-icons">
+            <a href="/auth/google" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+            <a href="/auth/google" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="/auth/google" class="icon"><i class="fa-brands fa-github"></i></a>
+            <a href="/auth/google" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
         </div>
-        <span>Please enter your details for registration</span>
+        <span> or enter your details for registration</span>
 
-        <% if (typeof signup_error !== "undefined") { %>
-          <div class="error-message"><%= signup_error %></div>
-        <% } %>
+        <% if (typeof signup_error !=="undefined" ) { %>
+          <div class="error-message">
+            <%= signup_error %>
+          </div>
+          <% } %>
 
-        <input type="text" name="username" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Sign Up</button>
+            <input type="text" name="username" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
       </form>
     </div>
 
     <!-- Sign In Form -->
     <div class="form-container sign-in">
       <form action="/login" method="POST">
-        <h1>Sign In <i class="fa-brands fa-google"></i></h1>
-        
+        <h1>Sign In</h1>
+
         <div class="social-icons">
 
-        
+
         </div>
-        <span>Please use your email password</span>
 
-        <% if (typeof login_error !== "undefined") { %>
-          <div class="error-message"><%= login_error %></div>
-        <% } %>
+        <div class="social-icons">
+          <a href="/auth/google" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="/auth/google" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="/auth/google" class="icon"><i class="fa-brands fa-github"></i></a>
+          <a href="/auth/google" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
 
-        <% if (typeof signup_success !== "undefined") { %>
-          <div class="success-message">Registration successful! Please login.</div>
-        <% } %>
 
-        <input type="email" name="email" placeholder="Email" required placeholder="Enter your email">
-        <input type="password" name="password" placeholder="Password" required placeholder="Enter Your Password">
-        <a href="#">Forgot Your Password?</a>
-        <button type="submit">Sign In</button>
+
+
+        <span>or use your email password</span>
+
+        <% if (typeof login_error !=="undefined" ) { %>
+          <div class="error-message">
+            <%= login_error %>
+          </div>
+          <% } %>
+
+            <% if (typeof signup_success !=="undefined" ) { %>
+              <div class="success-message">Registration successful! Please login.</div>
+              <% } %>
+
+                <input type="email" name="email" placeholder="Email" required placeholder="Enter your email">
+                <input type="password" name="password" placeholder="Password" required
+                  placeholder="Enter Your Password">
+                <a href="#">Forgot Your Password?</a>
+                <button type="submit">Sign In</button>
       </form>
     </div>
 
@@ -65,29 +89,20 @@
       </div>
     </div>
   </div>
-  
 
-<footer class="loginfooter">
+
+  <footer class="loginfooter">
     <div class="f-info">
-        <div class="f-info-socials">
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-tiktok"></i>
+
+      <div class="f-info-brand"> &copy; SajiloStay Private Limited</div> <br>
 
 
-        </div>
-        <div class="f-info-brand"> &copy; SajiloStay Private Limited</div>
-      
+      <center>
+        <h6>Made with &hearts; by Sajilo Stay Developer</h6>
+      </center>
 
-
-        <div class="f-info-links">
-            <a href="/privaacy">Privacy</a>
-            <a href="/terms">Terms</a>
-            
-        </div>
-        <h6>Made with &hearts; by Karan</h6>
     </div>
-</footer>
+  </footer>
 
   <script src="/Js/login.js"></script>
 </body>

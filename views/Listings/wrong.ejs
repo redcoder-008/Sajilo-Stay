@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Error - Authentication Failed</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .header {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header i {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .error-message {
+            background-color: #ffebee;
+            color: #d32f2f;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .error-message i {
+            font-size: 24px;
+        }
+
+        .try-again-btn {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .try-again-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .try-again-btn:active {
+            transform: translateY(0);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #6a11cb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(-5px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateX(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-lock"></i>
+            <h1>Authentication Error</h1>
+        </div>
+
+        <div class="content">
+            <div class="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                    <strong>Invalid email or password</strong>
+                    <p>Please check your credentials and try again.</p>
+                </div>
+            </div>
+
+            <a href="/login" class="try-again-btn" id="tryAgainBtn">
+                <i class="fas fa-redo-alt"></i> Try Again
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Having trouble? <a href="#">Reset password</a> or <a href="#">Contact support</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Add functionality to the Try Again button
+        document.getElementById('tryAgainBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Simulate redirect to login page
+            const btn = this;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting...';
+            btn.style.opacity = '0.8';
+            btn.style.cursor = 'not-allowed';
+
+            setTimeout(function () {
+                alert('Redirecting to login page...');
+                // In a real application, you would use:
+                window.location.href = '/login';
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
