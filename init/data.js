@@ -1,74 +1,129 @@
 const sampleListings = [
   {
-    title: "Grand Biratnagar Hotel",
+    title: "Super Delux Room - Big Hotel",
     description:
-      "Located in the heart of Biratnagar, Grand Biratnagar Hotel offers luxury rooms, modern amenities, and exceptional service for business and leisure travelers.",
+      "A four star hotel with prime location in biratnagar is the most luxurious accommodation you can find till date in the entire Biratnagar Municipality, lying in the eastern part of Nepal.",
     image: {
-      filename: "grand-biratnagar",
-      url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60",
+      filename: "comfort-Super Delux",
+      url: "https://www.bighotel.com.np/images/package/galleryimages/iBwTU-1.jpg",
     },
-    price: 5000,
-    location: "Biratnagar",
+    price: 11758,
+    location: "Biratnagar 11",
     country: "Nepal",
   },
+  
+ 
   {
-    title: "City Inn Biratnagar",
+    title: " Double Delux Room -Mithila Yatri Niwas", 
+
     description:
-      "A cozy and affordable hotel in central Biratnagar. Perfect for travelers seeking comfort without breaking the bank.",
+      " Mithila Yatri Niwas in Janakpur offers family rooms with air-conditioning, private bathrooms, and modern amenities. Each room includes a work desk, TV, and free toiletries.",
     image: {
-      filename: "city-inn",
-      url: "https://images.unsplash.com/photo-1560185008-5f2a3b92e1fa?auto=format&fit=crop&w=800&q=60",
+      filename: "Mithila Yatri Niwas",
+      url: "https://mithilayatriniwas.com/backend/images/gallery/galleryimages/AMRgs-room4.webp",
     },
-    price: 2500,
-    location: "Biratnagar",
+    price: 5875,
+    location: "Maharaj Sagar-6, Janakpurdham",
     country: "Nepal",
   },
-  {
-    title: "Biratnagar Business Hotel",
+   {
+    title: "Delux Twin Room -Ratna Hotel",
     description:
-      "Ideal for business travelers, this hotel provides modern meeting rooms, fast Wi-Fi, and executive rooms for a productive stay.",
+      " Located in Biratnagar, the hotel is 2.5 mi from the airport. Guests appreciate the convenient location and easy access to local attractions",
+    image: {
+      filename: "RatnaHotel-biratnagar",
+      url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/556536094.jpg?k=fc51471f2a1e85aae2fcb7de9ddbfc3feac023bd60660ae730648d5f8ce86cad&amp;o=&quot;",
+    },
+    price: 8569,
+    location: "Biratnagar 11, Buspark",
+    country: "Nepal",
+  },
+ 
+
+  {
+    title: "Delux Family Room -Kathmandu Regency Hotel",
+    description:
+      "Ideal for family travellers, business travelers, this hotel provides modern attractive rooms, fast Wi-Fi, and executive rooms for a productive stay.",
     image: {
       filename: "business-hotel",
-      url: "https://images.unsplash.com/photo-1576671080336-9d4d7f6ec5a6?auto=format&fit=crop&w=800&q=60",
+      url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/235914790.jpg?k=5ba0f7ce491ec59e6094da242355becb168358563078ab339da0a127ac5f2353&o=",
     },
-    price: 4500,
-    location: "Biratnagar",
+    price: 4987,
+    location: "Chhetrapati, Kathmandu J.P Marga, Thamel",
     country: "Nepal",
   },
   {
-    title: "Sunrise Residency Biratnagar",
+    title: "Classic Twin Room -Hotel Patan House",
     description:
       "Experience comfort and warm hospitality at Sunrise Residency. Rooms are spacious and perfect for family stays.",
     image: {
       filename: "sunrise-residency",
-      url: "https://images.unsplash.com/photo-1551882547-ff1a7bb5b51f?auto=format&fit=crop&w=800&q=60",
+      url: "https://gommts3.mmtcdn.com/htl-imgs/htl-imgs/202101201518273517-260348be_z.jpg?downsize=*:500&crop=990:500",
     },
-    price: 3000,
-    location: "Biratnagar",
+    price: 6218,
+    location: "Kwalakhu, Patan,",
     country: "Nepal",
   },
   {
-    title: "Royal Garden Hotel",
+    title: "Delux Double Room -Ratna Hotel",
     description:
-      "A luxury boutique hotel in Biratnagar featuring elegant interiors, a rooftop restaurant, and serene garden views.",
+      " Located in Biratnagar, the hotel is 2.5 mi from the airport. Guests appreciate the convenient location and easy access to local attractions",
     image: {
-      filename: "royal-garden",
-      url: "https://images.unsplash.com/photo-1600585154340-1a42d7d7c4d1?auto=format&fit=crop&w=800&q=60",
+      filename: "Delux Double Room",
+      url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/557384328.jpg?k=391dde20875d16d21c71b973db0b0f3aac3f7801c0450f28afb277955aec11df&amp;o=&quot",
     },
-    price: 5500,
-    location: "Biratnagar",
+    price: 7500,
+    location: "Biratnagar 11 Buspark",
+    country: "Nepal",
+  },
+  
+  {
+    title: "Budget luxury room -Magnificent Hotel",
+    description:
+      "Magnificent Hotel in Kathmandu offers family rooms with garden views, air-conditioning, private bathrooms, and free WiFi. Each room includes a work desk, mini-bar, and soundproofing for a pleasant stay.",
+    image: {
+      filename: "comfort-Super Delux",
+      url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/487298918.jpg?k=957b042f04b184336f1e547819a1af72c5a872ba830d2e2cb332b0056ad37991&o=",
+    },
+    price: 11758,
+    location: "Kesharmahal Marga, Thamel, Kathmandu ",
     country: "Nepal",
   },
   {
-    title: "Comfort Stay Biratnagar",
+
+    title: "Deluxe Twin Room -Hotel Lakeside Pvt. Ltd.",
     description:
-      "Comfort Stay offers modern rooms, friendly staff, and easy access to local attractions in Biratnagar.",
+      "Hotel Lakeside Pvt. Ltd. in Pokhara offers family rooms with air-conditioning, private bathrooms, and mountain views. Each room includes a tea and coffee maker, free toiletries, and a seating area",
     image: {
-      filename: "comfort-stay",
-      url: "https://images.unsplash.com/photo-1560448204-e0a6c7082b98?auto=format&fit=crop&w=800&q=60",
+      filename: "comfort-Super Delux",
+      url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/174519208.jpg?k=a0c5eaf1ea27aab9f4dceaf88bd3d0587ab32c674861b30aac4d36c6372cb0d8&o=",
     },
-    price: 2800,
-    location: "Biratnagar",
+    price: 2818,
+    location: "GairiKhet margh, Pokhara",
+    country: "Nepal",
+  },
+   {
+    title: "Delux Single - Big Hotel",
+    description:
+      "A four star hotel with prime location in biratnagar is the most luxurious accommodation you can find till date in the entire Biratnagar Municipality, lying in the eastern part of Nepal.",
+    image: {
+      filename: "Delux Single",
+      url: "https://www.bighotel.com.np/images/package/galleryimages/Do4mG-5.jpg",
+    },
+    price: 9500,
+    location: "Biratnagar 11 ",
+    country: "Nepal",
+  },
+  {
+    title: "Delux triple room - Hotel Sara PVT LTD",
+    description:
+      "A four star hotel with prime location in biratnagar is the most luxurious accommodation you can find till date in the entire Biratnagar Municipality, lying in the eastern part of Nepal.",
+    image: {
+      filename: "comfort-Super Delux",
+      url: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/347883548.jpg?k=0214a228391a0ba66c340bc434f45ae7166136d823874941f0bbb81df21ea6ee&o=",
+    },
+    price: 3320,
+    location: "Station road, Janakpur",
     country: "Nepal",
   },
 ];
